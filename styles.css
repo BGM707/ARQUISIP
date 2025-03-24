@@ -208,7 +208,7 @@ nav ul li a:hover {
     height: 100vh;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image.png');
     background-size: cover;
     background-position: center;
     color: white;
