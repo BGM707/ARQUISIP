@@ -1,6 +1,4 @@
-// main.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Menú desplegable
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('nav ul');
 
@@ -8,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
 
-    // Efecto de scroll en el header
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         if (window.scrollY > 50) {
@@ -18,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Navegación suave (smooth scroll)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -33,32 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Cambiar entre modo claro y oscuro
     const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
         const icon = themeToggle.querySelector('i');
-        if (document.body.classList.contains('dark-mode')) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
+        icon.classList.toggle('fa-moon');
+        icon.classList.toggle('fa-sun');
     });
 
-    // Cálculo de paneles SIP
     const cotizacionForm = document.getElementById('cotizacionForm');
     const tamanoPanelSelect = document.getElementById('tamano-panel');
     const panelPersonalizado = document.getElementById('panel-personalizado');
     const resultadoPaneles = document.getElementById('resultado-paneles');
 
     tamanoPanelSelect.addEventListener('change', function() {
-        if (this.value === 'personalizado') {
-            panelPersonalizado.style.display = 'block';
-        } else {
-            panelPersonalizado.style.display = 'none';
-        }
+        panelPersonalizado.style.display = this.value === 'personalizado' ? 'block' : 'none';
     });
 
     cotizacionForm.addEventListener('submit', function(event) {
@@ -80,4 +65,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         resultadoPaneles.textContent = `Necesitas aproximadamente ${panelesNecesarios} paneles.`;
     });
+
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const totalItems = carouselItems.length;
+    let currentIndex = 0;
+    const itemsPerView = 3;
+    const itemWidth = 100 / itemsPerView;
+
+    function moveCarousel() {
+        currentIndex++;
+        if (currentIndex >= totalItems - itemsPerView + 1) {
+            currentIndex = 0;
+        }
+        carouselTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+    }
+
+    setInterval(moveCarousel, 5000);
+    carouselTrack.style.transform = `translateX(0)`;
 });

@@ -10,50 +10,6 @@
     --gray: #95a5a6;
 }
 
-/* Nuevas animaciones */
-@keyframes slideDown {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes slideLine {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -79,7 +35,6 @@ body.dark-mode {
     margin: 0 auto;
 }
 
-/* Header - Mejorado */
 header {
     background-color: var(--primary);
     padding: 1rem 0;
@@ -167,7 +122,6 @@ nav ul li a:hover::after {
 
 nav ul li a:hover {
     color: var(--secondary);
-    transform: translateY(-2px);
 }
 
 .active {
@@ -203,12 +157,11 @@ nav ul li a:hover {
     transform: scale(1.2) rotate(180deg);
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('casa-moderna.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -253,7 +206,6 @@ nav ul li a:hover {
 
 .btn:hover {
     background-color: #d35400;
-    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -266,28 +218,6 @@ nav ul li a:hover {
     background-color: var(--secondary);
 }
 
-.btn-sm {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-}
-
-.btn-primary:hover {
-    background-color: #2980b9;
-}
-
-.btn-success {
-    background-color: var(--success);
-}
-
-.btn-success:hover {
-    background-color: #27ae60;
-}
-
-/* About Section - Mejorado */
 .section {
     padding: 6rem 0;
     position: relative;
@@ -311,177 +241,6 @@ nav ul li a:hover {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* Ventajas Section - Iconos mejorados */
-.ventaja-icon {
-    font-size: 2.5rem;
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
-    background-color: rgba(230, 126, 34, 0.1);
-    transition: all 0.3s ease;
-}
-
-.ventaja-card:hover .ventaja-icon {
-    transform: scale(1.1) rotate(5deg);
-    background-color: rgba(230, 126, 34, 0.2);
-    box-shadow: 0 0 15px rgba(230, 126, 34, 0.3);
-}
-
-/* Footer - Mejorado */
-footer {
-    background-color: var(--primary);
-    color: white;
-    padding: 4rem 0 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.footer-col {
-    position: relative;
-}
-
-.footer-col::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--secondary);
-    transition: width 0.3s ease;
-}
-
-.footer-col:hover::before {
-    width: 50px;
-}
-
-.footer-col ul li a i {
-    margin-right: 0.5rem;
-    color: var(--secondary);
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover i {
-    transform: translateX(5px);
-}
-
-.social-links a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background-color: #34495e;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 0.8rem;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.social-links a:hover {
-    background-color: var(--secondary);
-    transform: translateY(-5px);
-    animation: bounce 0.5s ease;
-}
-
-.social-links a::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover::after {
-    width: 60px;
-    height: 60px;
-    opacity: 0;
-}
-
-/* WhatsApp Float - Mejorado */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    line-height: 60px;
-    z-index: 100;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: pulse 2s infinite;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    animation: none;
-}
-
-/* Responsive - Mejorado */
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-    
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary);
-        flex-direction: column;
-        padding: 1rem 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-    
-    nav ul.active {
-        display: flex;
-        animation: slideDown 0.3s ease-out;
-    }
-    
-    nav ul li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        opacity: 0;
-        animation: fadeInUp 0.3s ease-out forwards;
-        animation-delay: calc(var(--order) * 0.1s);
-    }
-    
-    nav ul li a {
-        display: block;
-        padding: 0.8rem;
-        border-radius: 0;
-    }
-}
-
-/* Resto de secciones sin cambios mayores */
 .section-header h2 {
     font-size: 2.5rem;
     color: var(--primary);
@@ -508,6 +267,12 @@ footer {
     margin: 0 auto;
 }
 
+.carousel-item {
+    flex: 0 0 33.33%;
+    padding: 0 10px;
+    scroll-behavior: smooth;
+}
+
 .ventajas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -520,11 +285,29 @@ footer {
     padding: 2rem;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .ventaja-card:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ventaja-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    background-color: rgba(230, 126, 34, 0.1);
+    transition: all 0.3s ease;
+}
+
+.ventaja-card:hover .ventaja-icon {
+    background-color: rgba(230, 126, 34, 0.2);
+    box-shadow: 0 0 15px rgba(230, 126, 34, 0.3);
 }
 
 .ventaja-card h3 {
@@ -550,6 +333,11 @@ footer {
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.caracteristica-item:hover {
+    transform: translateY(-10px);
 }
 
 .caracteristica-item h3 {
@@ -583,6 +371,11 @@ footer {
     height: 300px;
     border-radius: 8px;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
 .project-img {
@@ -592,12 +385,15 @@ footer {
     transition: transform 0.5s;
 }
 
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
 .project-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     display: flex;
     flex-direction: column;
@@ -609,10 +405,6 @@ footer {
 
 .project-card:hover .project-overlay {
     opacity: 1;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.1);
 }
 
 .project-overlay h3 {
@@ -632,6 +424,11 @@ footer {
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.quote-form:hover {
+    transform: translateY(-10px);
 }
 
 .form-group {
@@ -672,7 +469,7 @@ textarea.form-control {
 
 .btn-submit:hover {
     background-color: #d35400;
-    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #resultado-paneles {
@@ -680,6 +477,26 @@ textarea.form-control {
     color: var(--primary);
     font-weight: 600;
     margin-top: 1rem;
+}
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.footer-col {
+    position: relative;
 }
 
 .footer-col h4 {
@@ -730,6 +547,67 @@ textarea.form-control {
     margin-top: 1.5rem;
 }
 
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 0.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover::after {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
 .copyright {
     text-align: center;
     padding-top: 2rem;
@@ -738,15 +616,34 @@ textarea.form-control {
     color: #bbb;
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
     }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInUp 0.3s ease-out forwards;
+        animation-delay: calc(var(--order) * 0.1s);
     }
 }
 
@@ -754,7 +651,7 @@ textarea.form-control {
     .hero h1 {
         font-size: 3rem;
     }
-    
+
     .section-header h2 {
         font-size: 2.2rem;
     }
@@ -764,20 +661,20 @@ textarea.form-control {
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero h2 {
         font-size: 1rem;
     }
-    
+
     .section-header h2 {
         font-size: 1.8rem;
     }
-    
+
     .btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
-    
+
     .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -785,5 +682,94 @@ textarea.form-control {
         font-size: 25px;
         right: 20px;
         bottom: 20px;
+    }
+}
+
+.carousel-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(33.33% * 20);
+}
+
+.carousel-item {
+    flex: 0 0 33.33%;
+    padding: 0 10px;
+}
+
+.project-card {
+    position: relative;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-overlay p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 50%;
+    }
+    .carousel-track {
+        width: calc(50% * 20);
+    }
+    .project-card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+    .carousel-track {
+        width: calc(100% * 20);
+    }
+    .project-card {
+        height: 200px;
     }
 }
